@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  scam-shield:
+    image: scam-shield:latest
+    container_name: scam-shield
+    restart: always
+    network_mode: host  # Allows direct interaction with the phone system
+    volumes:
+      - ./config:/app/config
+      - ./logs:/app/logs
+      - ./data:/app/data
+    environment:
+      - ENABLE_BLUETOOTH=true
+      - ENABLE_WIFI=true
+      - VOIP_PROVIDER=voip.ms
+    privileged: true  # Needed for network monitoring & Bluetooth access
