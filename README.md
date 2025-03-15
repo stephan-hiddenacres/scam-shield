@@ -1,2 +1,1 @@
-# scam-shield
-Standalone appliance for phone/internet scam protection
+# Scam Shield Project
